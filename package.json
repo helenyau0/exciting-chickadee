@@ -1,5 +1,7 @@
 {
   "name": "exciting-chickadee",
+  "description": "Create a twitter-regenerator with node.js",
+  "main": "index.js",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -15,13 +17,14 @@
   "dependencies": {
     "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
-    "debug": "~2.6.3",  
+    "debug": "~2.6.3",
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2"
   },
   "devDependencies": {
     "pg-promise": "^5.6.4",
     "pug": "^2.0.0-beta11",
-    "express": "~4.15.2"
+    "express": "~4.15.2",
+    "twit": "^2.2.5"
   }
 }
