@@ -3,6 +3,7 @@
   "description": "Create a twitter-regenerator with node.js",
   "main": "index.js",
   "version": "0.0.0",
+
   "private": true,
   "scripts": {
     "env": "echo DATABASE_URL=postgres://`whoami`@localhost:5432/coach-queue-development >> .env ",
@@ -14,7 +15,7 @@
   },
   "author": "Helen Yau",
   "license": "MIT",
-  "homepage": "https://github.com/helenyau0/exciting-chickadee",
+  "homepage": "https://github.com/helenyau0/exciting-chickadee#readme",
   "dependencies": {
     "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
@@ -25,6 +26,7 @@
     "serve-favicon": "~2.4.2"
   },
   "devDependencies": {
+    "express": "~4.15.2",
     "pg-promise": "^5.6.4",
     "pug": "^2.0.0-beta11",
     "express": "~4.15.2",
