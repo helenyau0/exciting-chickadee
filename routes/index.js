@@ -1,46 +1,68 @@
-var express = require('express');
-var router = express.Router();
-var Twit = require('twit');
-var config = require('./config.js')
+const express = require('express');
+const router = express.Router();
+const Twit = require('twit');
+const config = require('./config.js')
+const {Twitter} = require('../database/database.js')
 
-/* GET home page. */
+
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
+  Twitter.getAllTweets().then((results) => {
+    res.send(results)
+  })
+})
 
 console.log('this bot is running...');
 
-var T = new Twit(config);
+let T = new Twit(config);
 
-var techCrunchSearch = {
-  q: "#Technology OR #TechNEWS OR #STEM",
+let techCrunchSearch = {
+  q: "#Technology OR #Tech OR #STEM",
   count: 15,
   result_type: 'recent OR popular'
 }
-
 function retweetLatest() {
-  T.get('search/tweets', techCrunchSearch, function(err, data) {
-    if(!err) {
-      var retweetId = data.statuses[0].id_str
-
-      T.post('statuses/retweet/' + retweetId, {}, function(error, response) {
-        if(response) {
-          console.log('success, twitbot is working');
-        } else if(data && memberIDs) {
-          var id = {
-            id: data.statuses[0].id_str
+  T.get('search/tweets', techCrunchSearch, function(error, data) {
+    if(!error) {
+      let retweetId = data.statuses[0].id_str
+        T.post('statuses/retweet/' + retweetId, {}, function(error, response) {
+          if(response) {
+            console.log('success, twitbot is working');
+            Twitter.addTweets(response.text)
+            .then(result => {
+              res.send(result)
+            })
           }
-        } if(error) {
-          console.log('there was an error with Twitter: ' + error);
-        }
-      })
-    }
-    else {
-      console.log('there was an error with your hashtag search: ' + error);
-    }
-  })
-}
+          if(error) {
+            console.log('there was an error with Twitter: ' + error);
+          }
+        })
+      }
+      else {
+        console.log('there was an error with your hashtag search: ' + error);
+      }
+    })
+  }
+
+// router.get('/mySecretRoutelol', (req, res) => {
+//   T.get('search/tweets', { q:'testingtwitbot', count:10 } , function (error, data) {
+//     let arrayOfTweets = []
+//       if(data) {
+//         let tweets = data.statuses;
+//         for(let i = 0; i < tweets.length; i++) {
+//           arrayOfTweets.push(tweets[i].text)
+//         }
+//         Twitter.addTweets(arrayOfTweets)
+//         .then( results => {
+//           res.send( results )
+//         })
+//       } else {
+//         console.log('there was an error: ' + error);
+//       }
+//   });
+// })
+
+
+
 
 retweetLatest();
 

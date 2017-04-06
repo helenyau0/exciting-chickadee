@@ -1,4 +1,6 @@
 DROP TABLE IF EXISTS twitbot;
 
-
-CREATE TABLE IF NOT EXISTS twitbot;
+CREATE TABLE IF NOT EXISTS twitbot (
+  id SERIAL PRIMARY KEY,
+  tweets TEXT
+);
