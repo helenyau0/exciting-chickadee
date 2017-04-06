@@ -7,7 +7,6 @@ if(fs.existsSync('.env')) {
 const connectionString = process.env.DATABASE_URL;
 const db = pgp(connectionString)
 
-
 const Twitter = {
   getAllTweets: () => {
     const psql = `SELECT * FROM twitbot`
