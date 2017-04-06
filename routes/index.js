@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Twit = require('twit');
 const config = require('./config.js')
-const {Twitter} = require('../database/database.js')
-
+const { Twitter } = require('../database/database.js')
 
 router.get('/', function(req, res, next) {
   Twitter.getAllTweets().then((results) => {
@@ -20,6 +19,7 @@ let techCrunchSearch = {
   count: 15,
   result_type: 'recent OR popular'
 }
+
 function retweetLatest() {
   T.get('search/tweets', techCrunchSearch, function(error, data) {
     if(!error) {
@@ -28,9 +28,6 @@ function retweetLatest() {
         if(response) {
           console.log('success, twitbot is working');
           Twitter.addTweets(response.text)
-          .then(result => {
-            res.send(result)
-          })
         }
         if(error) {
           console.log('there was an error with Twitter: ' + error);
@@ -59,9 +56,6 @@ function retweetLatest() {
 //       }
 //   });
 // })
-
-
-
 
 retweetLatest();
 
