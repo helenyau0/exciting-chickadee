@@ -12,6 +12,10 @@ const Twitter = {
     const psql = `SELECT * FROM twitbot`
     return db.any(psql)
   },
+  getOneTweet: (id) => {
+    const psql = `SELECT id FROM twitbot`
+    return db.one(psql, id)
+  },
   addTweets: (tweet) => {
     const psql = `INSERT INTO twitbot(tweets) VALUES($1) RETURNING *`
     return db.any(psql, tweet)
