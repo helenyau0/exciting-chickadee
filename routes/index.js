@@ -50,25 +50,6 @@ router.get('/tweets/:id', function(req, res) {
   })
 })
 
-
-// router.get('/mySecretRoutelol', (req, res) => {
-//   T.get('search/tweets', { q:'testingtwitbot', count:10 } , function (error, data) {
-//     let arrayOfTweets = []
-//       if(data) {
-//         let tweets = data.statuses;
-//         for(let i = 0; i < tweets.length; i++) {
-//           arrayOfTweets.push(tweets[i].text)
-//         }
-//         Twitter.addTweets(arrayOfTweets)
-//         .then( results => {
-//           res.send( results )
-//         })
-//       } else {
-//         console.log('there was an error: ' + error);
-//       }
-//   });
-// })
-
 retweetLatest();
 
 setInterval(retweetLatest, 1000*60*30)
