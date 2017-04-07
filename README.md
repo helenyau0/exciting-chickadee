@@ -22,7 +22,7 @@ Developers/Learners will get practice working with Twitter’s REST APIs on the 
  - [X] Users can view up to fifty of their most recent tweets from Twitter.
  - [X] When user sends out a tweet, it is automatically save to the database for future access.
  - [X] Users can view their saved tweets (the ones in the database, not the ones from Twitter).
- - [ ] Users automatically re-tweet saved tweets at a specified interval (on the hour, for example).
+ - [X] Users automatically re-tweet saved tweets at a specified interval (on the hour, for example).
  - [X] The artifact produced is properly licensed, preferably with the MIT license.
 
 ### Stretch
