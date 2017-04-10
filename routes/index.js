@@ -10,9 +10,7 @@ router.get('/', function(req, res, next) {
   })
 })
 
-console.log('this bot is running...');
-
-let T = new Twit(config);
+const T = new Twit(config);
 
 let techCrunchSearch = {
   q: "#Technology OR #Tech OR #STEM",
