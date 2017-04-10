@@ -52,6 +52,6 @@ router.get('/tweets/:id', function(req, res) {
 
 retweetLatest();
 
-setInterval(retweetLatest, 1000*60*30)
+setInterval(retweetLatest, 1000*10)
 
 module.exports = router;
