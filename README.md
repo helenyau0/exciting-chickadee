@@ -1,14 +1,5 @@
 # Tweet-reGenerator with Node.js
 
-## Challenge
-
-This goal will likely be within your ZPD if you…
-
-  - Can build basic CRUD apps with Node.js and a SQL database
-  - Have a Twitter account and are familiar with basic Twitter concepts (like re-tweeting)
-  - Are interested in building full-stack web applications with frameworks like Express
-  - Are interested in using a live web API
-
 ## Context
 The life-span for a tweet is about 20 minutes, which means that most of your Twitter followers will not see your tweets the first time you post them. For this reason, re-tweeting your best content is a good idea.
 
@@ -26,11 +17,11 @@ Developers/Learners will get practice working with Twitter’s REST APIs on the 
  - [X] The artifact produced is properly licensed, preferably with the MIT license.
 
 ### Stretch
- - [ ] After retrieving the first fifty tweets, users can retrieve and view the next fifty of their most recent tweets from Twitter. (The API allows developers to get up to 50 tweets at a time.)
- - [ ] Users can re-tweet saved tweets at a specified time interval:
-      - [ ] Immediately
-      - [ ] At a specific time in the future
- - [ ] Users can view which saved tweets have been re-tweeted and when.
+ - [X] After retrieving the first fifty tweets, users can retrieve and view the next fifty of their most recent tweets from Twitter. (The API allows developers to get up to 50 tweets at a time.)
+ - [X] Users can re-tweet saved tweets at a specified time interval:
+      - [X] Immediately
+      - [X] At a specific time in the future
+ - [X] Users can view which saved tweets have been re-tweeted and when.
  - [ ] Users can edit saved tweets.
  - [ ] Users can delete saved tweets.
  - [ ] Users can search for and save another user’s tweets by accessing and capturing their Twitter feed.
